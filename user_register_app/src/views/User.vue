@@ -1,48 +1,8 @@
 <template>
   <section >
-      <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- Container wrapper -->
-  <div class="container">
-
-
-    <!-- Toggle button -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarButtonsExample"
-      aria-controls="navbarButtonsExample"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarButtonsExample">
-      <!-- Left links -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="User_Date" href="#">User Data</a>
-        </li>
-      </ul>
-      <!-- Left links -->
-
-      <div class="d-flex align-items-center">
-        <button type="button" class="btn btn-link px-3 me-2">
-          View Users
-        </button>
-        <button type="button" @click="goTosignout()" class="btn btn-primary me-3">
-         Sign out
-        </button>
-      </div>
-    </div>
-    <!-- Collapsible wrapper -->
-  </div>
-  <!-- Container wrapper -->
-</nav>
-<!-- Navbar -->
+        <navBar :submit="goTosignout"
+            :current="goTouser"
+            :firstName="this.user" />
     <div class="container1">
       <div class="row">
         <div class="col"></div>
@@ -109,11 +69,16 @@
   </section>
 </template>
 <script>
+import navBar from '../components/navBar.vue'
+
 export default {
   name: "form",
-  data() {
+    components:{
+    navBar
+},
+data() {
     return {
-      message: "Hello on Form page!",
+      user: "User List",
     };
   },
   methods: {
@@ -121,7 +86,7 @@ export default {
       this.$router.push("/");
     },
      goTouser() {
-      this.$router.push("/User");
+      this.$router.push("/Userlist");
     },
   },
 };

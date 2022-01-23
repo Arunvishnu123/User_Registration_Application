@@ -14,16 +14,21 @@ const routes = [
     name: 'Register',
     component: () => import('../views/Register.vue')
   },
-
   {
-    path: '/f',
-    name: 'f',
-    component: () => import('../views/f.vue')
+    path: '/t',
+    name: 't',
+    component: () => import('../views/t.vue')
   },
   {
     path: '/User',
     name: 'User',
     component: () => import('../views/User.vue')
+  },
+
+  {
+    path: '/Userlist',
+    name: 'Userlist',
+    component: () => import('../views/User_list.vue')
   },
 ];
 

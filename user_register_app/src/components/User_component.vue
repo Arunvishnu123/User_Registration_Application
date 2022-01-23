@@ -1,13 +1,5 @@
-
-
-// Define a new global component called button-counter
-app.component('user-com', {
-  data() {
-    return {
-    }
-  },
-  template:
-<div>  
+<template>
+    <div>  
  <div class="container-xl">
     <div class="table-responsive">
       <div class="table-wrapper">
@@ -178,4 +170,16 @@ app.component('user-com', {
     </div>
   </div>
 </div> 
-})
+</template>
+
+<script>
+export default{
+    name:'usercomp'
+}
+</script>
+
+<style scoped>
+span{
+padding-left: 15px;
+}
+</style>
