@@ -12,6 +12,7 @@
     "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
+    "firebase": "^9.6.4",
     "mdb-ui-kit": "^3.10.2",
     "mdbvue": "^6.7.3",
     "vue": "^3.2.28",

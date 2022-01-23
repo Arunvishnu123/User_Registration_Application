@@ -122,7 +122,7 @@
                     </div>
 
                     <div class="d-flex justify-content-end pt-3">
-                      <button type="button" class="btn btn-light btn-lg">
+                      <button @click="mounted ()" type="button" class="btn btn-light btn-lg">
                         Reset all
                       </button>
                       <button type="submit" class="btn btn-warning btn-lg ms-2">
@@ -140,7 +140,7 @@
   </section>
 </template>
 
-<script>
+<script>  
 import axios from "axios";
 export default {
   data() {
@@ -189,6 +189,14 @@ export default {
           console.log(response);
         });
     },
+
+  mounted () {
+    axios
+      .get('https://userregistrationsystem-default-rtdb.firebaseio.com/posts.json')
+      .then(response => {
+        console.log(response.data);
+      })
+  }
   },
 };
 </script>
