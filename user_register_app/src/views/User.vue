@@ -7,7 +7,6 @@
       <div class="row">
         <div class="col"></div>
       </div>
-   <button @click="tet()">tetst</button>
       <div class="row">
         <div class="col-lg-4">
           <div class="card mb-4">
@@ -18,7 +17,7 @@
                 class="rounded-circle img-fluid"
                 style="width: 150px"
               />
-              <h5 class="my-3">John Smith</h5>
+              <h5 class="my-3">{{$store.state.signedUser.firstName}} {{$store.state.signedUser.lastName}}</h5>
             </div>
           </div>
         </div>
@@ -30,7 +29,7 @@
                   <p class="mb-0">Full Name</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">Johnatan Smith</p>
+                  <p class="text-muted mb-0">{{$store.state.signedUser.firstName}} {{$store.state.signedUser.lastName}}</p>
                 </div>
               </div>
               <hr />
@@ -39,16 +38,16 @@
                   <p class="mb-0">Email</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">example@example.com</p>
+                  <p class="text-muted mb-0">{{$store.state.signedUser.email}}</p>
                 </div>
               </div>
               <hr />
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Phone</p>
+                  <p class="mb-0">DOB</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">26/07/1995</p>
+                  <p class="text-muted mb-0">{{$store.state.signedUser.DOB}}</p>
                 </div>
               </div>
               <hr />
@@ -58,7 +57,7 @@
                   <p class="mb-0">Address</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                  <p class="text-muted mb-0">{{$store.state.signedUser.address}}</p>
                 </div>
               </div>
             </div>
@@ -80,6 +79,9 @@ data() {
     return {
       user: "User List",
     };
+  },
+  created() {
+       
   },
   methods: {
     goTosignout() {

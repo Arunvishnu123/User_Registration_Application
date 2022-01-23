@@ -18,14 +18,19 @@
                       ></i>
                       <span class="h1 fw-bold mb-0">HIGHDAY</span>
                     </div>
-                 
+
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">
                       Sign into your account
                     </h5>
-                    <form v-on:submit.prevent="goTouser()">
+
+                    <form
+                      v-on:submit.prevent="goTouser()"
+                      @click="$store.dispatch('getData')"
+                    >
                       <div>
                         <div class="form-floating mb-3 mt-3">
                           <input
+                            v-model="email"
                             type="email"
                             class="form-control"
                             id="email"
@@ -37,6 +42,7 @@
                         </div>
                         <div class="form-floating mt-3 mb-3">
                           <input
+                            v-model="password"
                             type="text"
                             class="form-control"
                             id="pwd"
@@ -49,7 +55,6 @@
 
                         <div class="pt-1 mb-4">
                           <button
-                            
                             class="btn btn-dark btn-lg btn-block"
                             type="submit"
                           >
@@ -61,6 +66,7 @@
                     <!--
                     <a class="small text-muted" href="#!">Forgot password?</a>
                     -->
+                   
                     <p class="mb-5 pb-lg-2" style="color: #393f81">
                       Don't have an account?
                       <a
@@ -71,7 +77,7 @@
                       >
                     </p>
                   </form>
-                 
+                   
                 </div>
               </div>
             </div>
@@ -83,26 +89,51 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "form",
-  data() {
-    return {
-      message: "Hello on Form page!",
-    };
-  },
+  //data() {
+   // return {
+   //   email: "",
+   //   password: "",
+  //  };
+  //},
+  //
+  computed: {
+    email: {
+      get() {
+        return this.$store.state.currentEmail;
+      },
+      set(value) {
+        this.$store.commit("updateCurrentEmail", value);
+      },
+    },
+    password: {
+      get() {
+        return this.$store.state.currentPassword;
+      },
+      set(value) {
+        this.$store.commit("updateCurrentPassword", value);
+      }
+    }
+    },
   methods: {
     goToRegister() {
       this.$router.push("/Register");
     },
     goTouser() {
-      this.$router.push("/User");
+      console.log(this.$store.state.userData[0]);
+      for (const element of this.$store.state.userData) {
+        if (element.email == this.email && element.password == this.password) {
+          this.$router.push("/User");
+          this.$store.state.signedUser = element
+         
+        } 
+      }
     },
-    mounted () {
-    axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .then(response => (this.info = response))
-  }
+    tst(){
+      console.log(this.email)
+      console.log(this.password)
+    }
   },
 };
 </script>
