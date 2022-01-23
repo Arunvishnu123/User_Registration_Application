@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col"></div>
       </div>
-
+   <button @click="tet()">tetst</button>
       <div class="row">
         <div class="col-lg-4">
           <div class="card mb-4">
@@ -88,6 +88,9 @@ data() {
      goTouser() {
       this.$router.push("/Userlist");
     },
+    tet(){
+        console.log(this.$store.state.userData)
+    }
   },
 };
 </script>

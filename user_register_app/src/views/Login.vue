@@ -18,7 +18,7 @@
                       ></i>
                       <span class="h1 fw-bold mb-0">HIGHDAY</span>
                     </div>
-
+                 
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">
                       Sign into your account
                     </h5>
@@ -71,6 +71,7 @@
                       >
                     </p>
                   </form>
+                 
                 </div>
               </div>
             </div>
@@ -82,6 +83,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "form",
   data() {
@@ -96,6 +98,11 @@ export default {
     goTouser() {
       this.$router.push("/User");
     },
+    mounted () {
+    axios
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => (this.info = response))
+  }
   },
 };
 </script>
