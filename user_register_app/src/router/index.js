@@ -16,11 +16,10 @@ const routes = [
   },
 
   {
-    path: '/h',
-    name: 'h',
-    component: () => import('../views/h.vue')
+    path: '/f',
+    name: 'f',
+    component: () => import('../views/f.vue')
   },
-
   {
     path: '/User',
     name: 'User',

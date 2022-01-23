@@ -1,6 +1,14 @@
 
-<template>
-  <div class="container-xl">
+
+// Define a new global component called button-counter
+app.component('user-com', {
+  data() {
+    return {
+    }
+  },
+  template:
+<div>  
+ <div class="container-xl">
     <div class="table-responsive">
       <div class="table-wrapper">
         <table class="table table-striped table-hover">
@@ -41,7 +49,7 @@
       </div>
     </div>
   </div>
-  <!-- Edit Modal HTML -->
+  
   <div id="addEmployeeModal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -88,7 +96,6 @@
       </div>
     </div>
   </div>
-  <!-- Edit Modal HTML -->
   <div id="editEmployeeModal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -135,7 +142,7 @@
       </div>
     </div>
   </div>
-  <!-- Delete Modal HTML -->
+
   <div id="deleteEmployeeModal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -170,10 +177,5 @@
       </div>
     </div>
   </div>
-</template>
-
-<style scoped>
-span + span {
-  margin-left: 10px;
-}
-</style>
+</div> 
+})
