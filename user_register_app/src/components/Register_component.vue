@@ -74,9 +74,6 @@
       id="form3Example90"
       class="form-control form-control-lg"
     />
-    <h1>
-      {{ $store.state.firstName }}
-    </h1>
   </div>
 
   <div class="form-outline mb-4">

@@ -15,11 +15,6 @@ const routes = [
     component: () => import('../views/Register.vue')
   },
   {
-    path: '/t',
-    name: 't',
-    component: () => import('../views/t.vue')
-  },
-  {
     path: '/User',
     name: 'User',
     component: () => import('../views/User.vue')

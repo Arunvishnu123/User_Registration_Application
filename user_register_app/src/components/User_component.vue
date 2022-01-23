@@ -9,7 +9,7 @@
               <td>Thomas Hardy</td>
               <td>thomashardy@mail.com</td>
               <td>89 Chiaroscuro Rd, Portland, USA</td>
-              <td>(171) 555-2222</td>
+              <td>26/07/1995</td>
               <td>
                 <span>
                   <a href="#editEmployeeModal" class="edit" data-toggle="modal"
@@ -71,7 +71,7 @@
               <textarea class="form-control" required></textarea>
             </div>
             <div class="form-group">
-              <label>Phone</label>
+              <label>DOB</label>
               <input type="text" class="form-control" required />
             </div>
           </div>
@@ -117,7 +117,7 @@
               <textarea class="form-control" required></textarea>
             </div>
             <div class="form-group">
-              <label>Phone</label>
+              <label>DOB</label>
               <input type="text" class="form-control" required />
             </div>
           </div>
