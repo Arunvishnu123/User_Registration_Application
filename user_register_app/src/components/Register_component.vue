@@ -8,6 +8,7 @@
           type="text"
           id="form3Example1m"
           class="form-control form-control-lg"
+          required
         />
       </div>
     </div>
@@ -19,6 +20,7 @@
           type="text"
           id="form3Example1n"
           class="form-control form-control-lg"
+          required
         />
       </div>
     </div>
@@ -33,6 +35,7 @@
       type="text"
       id="form3Example8"
       class="form-control form-control-lg"
+      required
     />
   </div>
 
@@ -41,6 +44,7 @@
       <option value="Male">Male</option>
       <option value="Female">Female</option>
       <option value="Other">Other</option>
+      
     </select>
   </div>
 
@@ -53,6 +57,7 @@
       type="text"
       id="form3Example9"
       class="form-control form-control-lg"
+      required
     />
   </div>
   <!--
@@ -70,9 +75,10 @@
     <input
       v-model="email"
       placeholder="Email"
-      type="text"
+      type="email"
       id="form3Example90"
       class="form-control form-control-lg"
+      required
     />
   </div>
 
@@ -83,6 +89,7 @@
       type="text"
       id="form3Example99"
       class="form-control form-control-lg"
+      required
     />
   </div>
 
@@ -93,6 +100,7 @@
       type="text"
       id="form3Example97"
       class="form-control form-control-lg"
+      required
     />
   </div>
 

@@ -22,42 +22,53 @@
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">
                       Sign into your account
                     </h5>
+                    <form v-on:submit.prevent="goTouser()">
+                      <div>
+                        <div class="form-floating mb-3 mt-3">
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            placeholder="Enter email"
+                            name="email"
+                            required
+                          />
+                          <label for="email">Email</label>
+                        </div>
+                        <div class="form-floating mt-3 mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="pwd"
+                            placeholder="Enter password"
+                            name="pswd"
+                            required
+                          />
+                          <label for="pwd">Password</label>
+                        </div>
 
-                    <div class="form-floating mb-3 mt-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="email"
-                        placeholder="Enter email"
-                        name="email"
-                      />
-                      <label for="email">Email</label>
-                    </div>
-                    <div class="form-floating mt-3 mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="pwd"
-                        placeholder="Enter password"
-                        name="pswd"
-                      />
-                      <label for="pwd">Password</label>
-                    </div>
-
-                    <div class="pt-1 mb-4">
-                      <button @click="goTouser()"
-                        class="btn btn-dark btn-lg btn-block"
-                        type="button"
-                      >
-                        Login
-                      </button>
-                    </div>
+                        <div class="pt-1 mb-4">
+                          <button
+                            
+                            class="btn btn-dark btn-lg btn-block"
+                            type="submit"
+                          >
+                            Login
+                          </button>
+                        </div>
+                      </div>
+                    </form>
                     <!--
                     <a class="small text-muted" href="#!">Forgot password?</a>
                     -->
                     <p class="mb-5 pb-lg-2" style="color: #393f81">
                       Don't have an account?
-                      <a href="#!" @click="goToRegister()" style="color: #393f81">Register here</a>
+                      <a
+                        href="#!"
+                        @click="goToRegister()"
+                        style="color: #393f81"
+                        >Register here</a
+                      >
                     </p>
                   </form>
                 </div>
@@ -82,7 +93,7 @@ export default {
     goToRegister() {
       this.$router.push("/Register");
     },
-     goTouser() {
+    goTouser() {
       this.$router.push("/User");
     },
   },
