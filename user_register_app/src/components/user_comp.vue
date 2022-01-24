@@ -67,12 +67,12 @@
 </template>
 
 <script>
-import editUser from './Edit_User.vue';
+import editUser from "./Edit_User.vue";
 export default {
   name: "usercomp",
-  components:{
-    editUser
-},
+  components: {
+    editUser,
+  },
   props: {
     data: Object,
   },
@@ -92,14 +92,11 @@ span {
 table,
 th,
 td {
-  
   table-layout: fixed;
   border-collapse: collapse;
   margin: 0;
   font-size: 0.9em;
   font-family: sans-serif;
- 
-
 }
 
 td {
