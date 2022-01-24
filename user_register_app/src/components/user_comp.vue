@@ -1,5 +1,5 @@
 <template>
-  <table class="table table-striped">
+  <table class="table table-dark table-striped">
     <tbody>
       <tr>
         <td>{{ data.firstName }} {{ data.lastName }}</td>
@@ -9,8 +9,7 @@
         <td>
           <span>
             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-              <i class="material-icons" data-toggle="tooltip" title="Edit"
-                >E</i
+              <i class="fa-solid fa-trash-can"></i>
               ></a
             >
           </span>
@@ -68,6 +67,7 @@
 
 <script>
 import editUser from "./editUser.vue";
+
 export default {
   name: "usercomp",
   components: {
@@ -105,4 +105,5 @@ td {
 .edit {
   font-size: 1px;
 }
+
 </style>

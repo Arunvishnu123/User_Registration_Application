@@ -16,6 +16,7 @@
                         class="fas fa-cubes fa-2x me-3"
                         style="color: #ff6219"
                       ></i>
+                      
                       <span class="h1 fw-bold mb-0">HIGHDAY</span>
                     </div>
 
@@ -43,14 +44,17 @@
                         <div class="form-floating mt-3 mb-3">
                           <input
                             v-model="password"
-                            type="text"
+                            :type="value ? 'password' : 'text'"
                             class="form-control"
                             id="pwd"
                             placeholder="Enter password"
                             name="pswd"
                             required
+                            :append-icon="value ? 'visibility' : 'visibility_off'"
+                            @click:append="() => (value = !value)"
                           />
                           <label for="pwd">Password</label>
+                          
                         </div>
 
                         <div class="pt-1 mb-4">
@@ -60,13 +64,14 @@
                           >
                             Login
                           </button>
+                          
                         </div>
                       </div>
                     </form>
                     <!--
                     <a class="small text-muted" href="#!">Forgot password?</a>
                     -->
-                   
+
                     <p class="mb-5 pb-lg-2" style="color: #393f81">
                       Don't have an account?
                       <a
@@ -77,7 +82,6 @@
                       >
                     </p>
                   </form>
-                   
                 </div>
               </div>
             </div>
@@ -91,13 +95,12 @@
 <script>
 export default {
   name: "form",
-  //data() {
-   // return {
-   //   email: "",
-   //   password: "",
-  //  };
-  //},
-  //
+  data() {
+    return {
+      value: String,
+    };
+  },
+
   computed: {
     email: {
       get() {
@@ -113,9 +116,9 @@ export default {
       },
       set(value) {
         this.$store.commit("updateCurrentPassword", value);
-      }
-    }
+      },
     },
+  },
   methods: {
     goToRegister() {
       this.$router.push("/Register");
@@ -125,15 +128,14 @@ export default {
       for (const element of this.$store.state.userData) {
         if (element.email == this.email && element.password == this.password) {
           this.$router.push("/User");
-          this.$store.state.signedUser = element
-         
-        } 
+          this.$store.state.signedUser = element;
+        }
       }
     },
-    tst(){
-      console.log(this.email)
-      console.log(this.password)
-    }
+    tst() {
+      console.log(this.email);
+      console.log(this.password);
+    },
   },
 };
 </script>

@@ -84,20 +84,24 @@
 
   <div class="form-outline mb-4">
     <input
+      :rules="[required, min6]" 
       v-model="password"
       placeholder="Password"
-      type="text"
+     type="password"
       id="form3Example99"
       class="form-control form-control-lg"
       required
+      :counter="6"
     />
   </div>
 
   <div class="form-outline mb-4">
     <input
-      v-model="password"
+      :rules="[required, min6, matchingPasswords]"
+      v-model="password1"
+      :counter="6"
       placeholder="Repeat Password"
-      type="text"
+      type="password"
       id="form3Example97"
       class="form-control form-control-lg"
       required
