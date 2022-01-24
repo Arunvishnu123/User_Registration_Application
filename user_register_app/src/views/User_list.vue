@@ -15,7 +15,8 @@
 </template>
 <script>
 import navBar from "../components/navBar.vue";
-import usercomp from "../components/User_component.vue";
+import usercomp from "../components/user_comp.vue";
+
 export default {
   components: {
     navBar,

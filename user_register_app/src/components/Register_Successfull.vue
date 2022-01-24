@@ -17,7 +17,7 @@
 			<div class="modal-body text-center">
 				<h4>Great!</h4>	
 				<p>Your account has been created successfully.</p>
-				<button class="btn btn-success" data-dismiss="modal"><span>Start Exploring</span> <i class="material-icons">&#xE5C8;</i></button>
+				<button @click="gotologin()"   class="btn btn-success" data-dismiss="modal"><span>Go to Login</span> <i class="material-icons">&#xE5C8;</i></button>
 			</div>
 		</div>
 	</div>
@@ -27,6 +27,11 @@
 <script>
 export default {
   name: "registersuccess",
+  methods:{
+  gotologin(){
+    this.$router.push("/");
+  }
+  }
 };
 </script>
 
