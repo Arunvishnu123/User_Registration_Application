@@ -28,7 +28,7 @@
 
         <div class="d-flex align-items-center">
           <button type="button" @click="current" class="btn btn-link px-3 me-2">
-            {{ firstName }}
+            {{firstName}} 
           </button>
           <button type="button" @click="submit" class="btn btn-primary me-3">
             Sign out
@@ -58,12 +58,12 @@ export default {
         return {};
       },
     },
-    current: {
-      type: Function,
+    current:{
+        type: Function,
       default() {
         return {};
-      },
-    },
+      }, 
+    }
   },
 };
 </script>

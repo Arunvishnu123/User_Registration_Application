@@ -41,6 +41,7 @@ export default {
   },
   methods: {
     onCreatePost() {
+      this.$router.push("/register_success");
       axios
         .post(
           "https://userregistrationsystem-default-rtdb.firebaseio.com/posts.json",

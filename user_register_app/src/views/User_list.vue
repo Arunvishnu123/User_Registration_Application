@@ -5,10 +5,13 @@
     </div>
     <div>
       <ul>
-        <usercomp v-for="data in datas" :data="data" :key="data.id"> </usercomp>
+        
+          <usercomp v-for="data in datas" :data="data" :key="data.id"> </usercomp>
+        
       </ul>
     </div>
   </div>
+ 
 </template>
 <script>
 import navBar from "../components/navBar.vue";
@@ -21,7 +24,7 @@ export default {
   data() {
     return {
       user: "Current User",
-      g: 0,
+      g:0
     };
   },
   computed: {
@@ -38,6 +41,7 @@ export default {
     viewUser() {
       this.$router.push("/User");
     },
+    
   },
 };
 </script>

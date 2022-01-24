@@ -66,7 +66,7 @@
                     <!--
                     <a class="small text-muted" href="#!">Forgot password?</a>
                     -->
-
+                   
                     <p class="mb-5 pb-lg-2" style="color: #393f81">
                       Don't have an account?
                       <a
@@ -77,6 +77,7 @@
                       >
                     </p>
                   </form>
+                   
                 </div>
               </div>
             </div>
@@ -91,9 +92,9 @@
 export default {
   name: "form",
   //data() {
-  // return {
-  //   email: "",
-  //   password: "",
+   // return {
+   //   email: "",
+   //   password: "",
   //  };
   //},
   //
@@ -112,9 +113,9 @@ export default {
       },
       set(value) {
         this.$store.commit("updateCurrentPassword", value);
-      },
+      }
+    }
     },
-  },
   methods: {
     goToRegister() {
       this.$router.push("/Register");
@@ -124,14 +125,15 @@ export default {
       for (const element of this.$store.state.userData) {
         if (element.email == this.email && element.password == this.password) {
           this.$router.push("/User");
-          this.$store.state.signedUser = element;
-        }
+          this.$store.state.signedUser = element
+         
+        } 
       }
     },
-    tst() {
-      console.log(this.email);
-      console.log(this.password);
-    },
+    tst(){
+      console.log(this.email)
+      console.log(this.password)
+    }
   },
 };
 </script>
