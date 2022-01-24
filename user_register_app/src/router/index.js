@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Login from "../views/Login.vue";
-import Register from "../views/Register.vue";
+import Login from "../views/login.vue";
+import Register from "../views/register.vue";
 
 const routes = [
 
@@ -17,19 +17,19 @@ const routes = [
   {
     path: '/User',
     name: 'User',
-    component: () => import('../views/User.vue')
+    component: () => import('../views/userData.vue')
   },
 
   {
     path: '/register_success',
     name: 'register_success',
-    component: () => import('../views/Register_Success.vue')
+    component: () => import('../views/registrationConfirm.vue')
   },
 
   {
     path: '/Userlist',
     name: 'Userlist',
-    component: () => import('../views/User_list.vue')
+    component: () => import('../views/userList.vue')
   },
 ];
 

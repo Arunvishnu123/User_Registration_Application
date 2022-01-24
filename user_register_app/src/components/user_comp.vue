@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import editUser from "./Edit_User.vue";
+import editUser from "./editUser.vue";
 export default {
   name: "usercomp",
   components: {

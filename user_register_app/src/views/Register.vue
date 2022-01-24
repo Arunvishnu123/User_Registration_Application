@@ -34,7 +34,7 @@
 
 <script>
 import axios from "axios";
-import registercomp from "../components/Register_component.vue";
+import registercomp from "../components/registerComponent.vue";
 export default {
   components: {
     registercomp,
