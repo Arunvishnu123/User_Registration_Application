@@ -6,10 +6,10 @@
         <table class="table table-striped table-hover">
           <tbody>
             <tr>
-              <td>Thomas Hardy</td>
-              <td>thomashardy@mail.com</td>
-              <td>89 Chiaroscuro Rd, Portland, USA</td>
-              <td>26/07/1995</td>
+              <td>{{data.firstName}} {{data.lastName}}</td>
+              <td>{{data.email}}</td>
+              <td>{{data.address}}</td>
+              <td>{{data.DOB}}</td>
               <td>
                 <span>
                   <a href="#editEmployeeModal" class="edit" data-toggle="modal"
@@ -174,8 +174,19 @@
 
 <script>
 export default{
-    name:'usercomp'
+    name:'usercomp',
+   props: {
+    data: Object
+   },
+  computed: {
+    gt(){
+    console.log("key",this.key)
+    return this.key
+    }
+  }
+
 }
+
 </script>
 
 <style scoped>

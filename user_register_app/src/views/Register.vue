@@ -53,6 +53,7 @@ export default {
             DOB: this.$store.state.DOB,
             email: this.$store.state.email,
             password: this.$store.state.password,
+            test:2
           }
         )
         .then((response) => {
