@@ -1,8 +1,6 @@
 <template>
-  <section >
-        <navBar :submit="goTosignout"
-            :current="goTouser"
-            :firstName="this.user" />
+  <section>
+    <navBar :submit="goTosignout" :current="goTouser" :firstName="this.user" />
     <div class="container1">
       <div class="row">
         <div class="col"></div>
@@ -17,7 +15,10 @@
                 class="rounded-circle img-fluid"
                 style="width: 150px"
               />
-              <h5 class="my-3">{{$store.state.signedUser.firstName}} {{$store.state.signedUser.lastName}}</h5>
+              <h5 class="my-3">
+                {{ $store.state.signedUser.firstName }}
+                {{ $store.state.signedUser.lastName }}
+              </h5>
             </div>
           </div>
         </div>
@@ -29,7 +30,10 @@
                   <p class="mb-0">Full Name</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{$store.state.signedUser.firstName}} {{$store.state.signedUser.lastName}}</p>
+                  <p class="text-muted mb-0">
+                    {{ $store.state.signedUser.firstName }}
+                    {{ $store.state.signedUser.lastName }}
+                  </p>
                 </div>
               </div>
               <hr />
@@ -38,7 +42,9 @@
                   <p class="mb-0">Email</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{$store.state.signedUser.email}}</p>
+                  <p class="text-muted mb-0">
+                    {{ $store.state.signedUser.email }}
+                  </p>
                 </div>
               </div>
               <hr />
@@ -47,7 +53,9 @@
                   <p class="mb-0">DOB</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{$store.state.signedUser.DOB}}</p>
+                  <p class="text-muted mb-0">
+                    {{ $store.state.signedUser.DOB }}
+                  </p>
                 </div>
               </div>
               <hr />
@@ -57,7 +65,9 @@
                   <p class="mb-0">Address</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0">{{$store.state.signedUser.address}}</p>
+                  <p class="text-muted mb-0">
+                    {{ $store.state.signedUser.address }}
+                  </p>
                 </div>
               </div>
             </div>
@@ -68,48 +78,44 @@
   </section>
 </template>
 <script>
-import navBar from '../components/navBar.vue'
+import navBar from "../components/navBar.vue";
 
 export default {
   name: "form",
-    components:{
-    navBar
-},
-data() {
+  components: {
+    navBar,
+  },
+  data() {
     return {
       user: "User List",
     };
   },
-  created() {
-       
-  },
+  created() {},
   methods: {
     goTosignout() {
       this.$router.push("/");
     },
-     goTouser() {
+    goTouser() {
       this.$router.push("/Userlist");
     },
-    tet(){
-        console.log(this.$store.state.userData)
-    }
+    tet() {
+      console.log(this.$store.state.userData);
+    },
   },
 };
 </script>
 <style scoped>
-.container1{
-  margin: 4cm;  
+.container1 {
+  margin: 4cm;
 }
 
-.col{
-    color:rgb(47, 9, 134);
+.col {
+  color: rgb(47, 9, 134);
 }
-.card{
-    background-color: rgb(194, 194, 194);
+.card {
+  background-color: rgb(194, 194, 194);
 }
-.User_Date
-{
-    
-    font-size: 20px;
+.User_Date {
+  font-size: 20px;
 }
 </style>
