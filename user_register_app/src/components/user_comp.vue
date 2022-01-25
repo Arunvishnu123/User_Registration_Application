@@ -1,5 +1,6 @@
 <template>
   <table class="table table-dark table-striped">
+    
     <tbody>
       <tr>
         <td>{{ data.firstName }} {{ data.lastName }}</td>
@@ -9,15 +10,14 @@
         <td>
           <span>
             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-              <i class="fa-solid fa-trash-can"></i>
-              ></a
+             Edit
+              </a
             >
           </span>
           <span>
             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"
-              ><i class="material-icons" data-toggle="tooltip" title="Delete"
-                >D</i
-              ></a
+              >Delete
+              </a
             >
           </span>
         </td>
@@ -87,7 +87,7 @@ export default {
 
 <style scoped>
 span {
-  padding-left: 50px;
+  padding-left: 35px;
 }
 table,
 th,
@@ -103,7 +103,12 @@ td {
   width: 25%;
 }
 .edit {
-  font-size: 1px;
+  font-size: 15px;
+  color: aliceblue;
+}
+.delete {
+  font-size: 15px;
+  color: aliceblue;
 }
 
 </style>

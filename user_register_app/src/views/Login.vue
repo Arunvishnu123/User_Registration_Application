@@ -140,7 +140,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .img-fluid {
   width: 650px;
   height: 609px;

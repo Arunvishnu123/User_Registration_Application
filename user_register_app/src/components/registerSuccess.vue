@@ -36,7 +36,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style scoped lang="scss">
 body {
   font-family: "Varela Round", sans-serif;
   background: #434e65;
