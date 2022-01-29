@@ -10,6 +10,8 @@
           :data="data"
           :key="data.id"
           ref="nameOfRef"
+          v-bind:is="field.type"
+          :id="field.id"
         >
         </usercomp>
       </ul>
@@ -18,7 +20,7 @@
 </template>
 <script>
 import navBar from "../components/navBar.vue";
-import usercomp from "../components/user_comp.vue";
+import usercomp from "../components/userListComponent.vue";
 
 export default {
   components: {
@@ -54,7 +56,7 @@ export default {
 </script>
 
 <style scoped>
-.test{
-  margin:0
+.test {
+  margin: 0;
 }
 </style>

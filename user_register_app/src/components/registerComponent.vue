@@ -98,6 +98,7 @@
   <div class="form-outline mb-4">
     <input
       :rules="[required, min6, matchingPasswords]"
+      
       v-model="password1"
       :counter="6"
       placeholder="Repeat Password"
