@@ -86,7 +86,7 @@ export default createStore({
      deleteData({commit},data){
              commit('deleteDatas',data);
              console.log("current",data)
-      axios.delete('https://userregistrationsystem-default-rtdb.firebaseio.com/posts/'+ data.id).then(response => {
+      axios.delete('https://userregistrationsystem-default-rtdb.firebaseio.com/posts/'+ data.id+'.json').then(response => {
         console.log("Deleted",response)
       })
     }
