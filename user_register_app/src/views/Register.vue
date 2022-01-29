@@ -39,6 +39,11 @@ export default {
   components: {
     registercomp,
   },
+  data() {
+    return {
+      value: 0 ,
+    };
+  },
   methods: {
     onCreatePost() {
       this.$router.push("/register_success");
@@ -54,7 +59,7 @@ export default {
             DOB: this.$store.state.DOB,
             email: this.$store.state.email,
             password: this.$store.state.password,
-            test:2
+            value: this.value+1,
           }
         )
         .then((response) => {

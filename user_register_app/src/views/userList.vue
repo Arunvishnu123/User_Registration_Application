@@ -10,8 +10,8 @@
           :data="data"
           :key="data.id"
           ref="nameOfRef"
-          v-bind:is="field.type"
-          :id="field.id"
+          :id="data.id"
+          :deleteData="deleteData1"
         >
         </usercomp>
       </ul>
@@ -50,6 +50,10 @@ export default {
     save() {
       let Data = this.$refs.nameOfRef.$data;
       console.log(Data);
+    },
+    deleteData1() {
+      console.log("nvjdvkdjdv");
+      
     },
   },
 };

@@ -62,6 +62,14 @@ export default createStore({
     updateCurrentPassword(state, currentPassword) {
       state.currentPassword = currentPassword
     },
+
+    //delete the individual data
+    deleteDatas(state,dataID){
+      console.log("dksdv",dataID.id)
+       let datas = state.userData.filter(v=> v.id != dataID.id)
+       state.userData=datas
+    }
+
   },
   actions: {
     getData({ commit }) {
@@ -73,6 +81,13 @@ export default createStore({
         }
         console.log(userdata)
         commit('getData', userdata)
+      })
+    },
+     deleteData({commit},data){
+             commit('deleteDatas',data);
+             console.log("current",data)
+      axios.delete('https://userregistrationsystem-default-rtdb.firebaseio.com/posts/'+ data.id).then(response => {
+        console.log("Deleted",response)
       })
     }
   },
