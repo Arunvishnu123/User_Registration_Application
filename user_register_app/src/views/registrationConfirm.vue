@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import registersuccess from "../components/registerSuccess.vue";
+import registersuccess from "../components/registerSuccessComponent.vue";
 export default {
     components: {
         registersuccess,

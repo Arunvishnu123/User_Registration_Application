@@ -60,6 +60,7 @@
 export default {
     name: "registercomp",
     computed: {
+      //update and get data from and to store when user selects the register option firstName,lastName,address,DOB,email,password,gender
         firstName: {
             get() {
                 return this.$store.state.firstName;
@@ -120,10 +121,13 @@ export default {
         },
     },
     methods: {
+      //receive the gender value from dropdown selectors
         onChange(event) {
             this.gender = event.target.value;
             console.log(this.gender);
         },
+
+        //browse photo from system . this feature is currently not used 
         updatePhoto(files) {
             if (!files.length) return;
 

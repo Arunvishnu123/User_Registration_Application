@@ -77,49 +77,53 @@ export default {
         };
     },
     computed: {
-        gt() {
-            console.log("key", this.key);
-            return this.key;
-        },
+
     },
     methods: {
+        //function to select the data from the component need to be deleted when the user select the delete option in userlist screen
         getDeleteData(data) {
 
-            this.$store.state.testDelete = data
-            console.log(this.$store.state.testDelete)
+            this.$store.state.testDelete = data;
+            console.log(this.$store.state.testDelete);
         },
+        //function to delete the selected  component from the list
         deleteData() {
-            let data = this.$store.state.testDelete
+            let data = this.$store.state.testDelete;
             console.log(data);
-
-            this.$store.dispatch("deleteData", data);
+            this.$store.dispatch("deleteData", data); //delete function is written in the store in the function deleteData
         },
+
+        //function to select the data when user select a particular compoenent to edit
         editData(data) {
 
-            this.$store.state.editUserData = data
+            this.$store.state.editUserData = data //data from selected component
 
-            var selectEdit = this.$store.state.userData.filter(v => v.id == data.id)
-            console.log("sdfsdfd", selectEdit[0])
-            this.$store.state.editPutData.firstName = selectEdit[0].firstName
-            this.$store.state.editPutData.lastName = selectEdit[0].lastName
-            this.$store.state.editPutData.DOB = selectEdit[0].DOB
-            this.$store.state.editPutData.email = selectEdit[0].email
-            this.$store.state.editPutData.address = selectEdit[0].address
-            this.$store.state.editPutData.password = selectEdit[0].password
-            this.$store.state.editPutData.gender = selectEdit[0].gender
+           //var selectEdit = this.$store.state.userData.filter(v => v.id == data.id)//filter the data 
+           
+            console.log("sdfsdsdfsdfsdfsdfsdfd", data)
+            this.$store.state.editPutData.firstName = data.firstName//get the current firstname from the selected data before editing
+            this.$store.state.editPutData.lastName = data.lastName//get the current lastname from the selected data before editing and store it 
+            this.$store.state.editPutData.DOB = data.DOB//get the current DOB from the selected data before editing and store it
+            this.$store.state.editPutData.email = data.email//get the current lemail from the selected data before editing and store it
+            this.$store.state.editPutData.address = data.address//get the current address from the selected data before editing and store it
+            this.$store.state.editPutData.password = data.password//get the current password from the selected data before editing and store it
+            this.$store.state.editPutData.gender = data.gender//get the current gender from the selected data before editing and store it
 
             console.log(this.$store.state.editPutData)
-            console.log(selectEdit)
+            
         },
+
+        //fucntion to put the data on server
         onCreatePut() {
             let da = this.$store.state.editUserData
             console.log(this.$store.state.editPutData.firstName)
 
             axios.put('https://userregistrationsystem-default-rtdb.firebaseio.com/posts/' + da.id + '.json',
+              //editPutData in store to update the data in the server
                 this.$store.state.editPutData).then(response => {
                 console.log("put", response)
                 this.$store.state.userData.filter(v => v.id == this.$store.state.editPutData.id)
-                this.$store.dispatch("getData")
+                this.$store.dispatch("getData")//function to update current user list - simply the get request from the server
 
             })
         }

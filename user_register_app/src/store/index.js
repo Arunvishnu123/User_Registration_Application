@@ -36,6 +36,7 @@ export default createStore({
       pasword:null
     },
 
+    //tag to put data - during edit 
     editPutData:{
       firstName:null,
       lastName:null,
@@ -97,13 +98,7 @@ export default createStore({
 
     },
 
-    editDatas(state, dataID) {
-      console.log("dksdv", dataID)
-      // let editdatas = state.userData.filter(v => v.id != dataID.id)
-       // state.editUserData = editdatas
-    },
-
-    //edit DATA
+    //edit DATA when user choose edit option
 
     editFirstName(state, firstName) {
       state.editPutData.firstName = firstName
@@ -126,6 +121,8 @@ export default createStore({
 
   },
   actions: {
+
+    //get data from the server - here firebase realtime database is used
     getData({ commit }) {
       axios.get('https://userregistrationsystem-default-rtdb.firebaseio.com/posts.json').then(response => {
         var userdata = [];

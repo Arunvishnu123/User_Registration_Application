@@ -28,6 +28,7 @@
 export default {
     name: "registersuccess",
     methods: {
+      //function to route to the login screen
         gotologin() {
             this.$router.push("/");
         }
