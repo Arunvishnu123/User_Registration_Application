@@ -8,12 +8,13 @@
         <td>{{ data.DOB }}</td>
         <td>
           <span>
-            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-              Edit
+            <a  href="#editEmployeeModal" @click="editData(data)" class="edit" data-toggle="modal">
+            Edit
+              
             </a>
           </span>
           <span>
-            <a href="#deleteEmployeeModal"  class="delete" data-toggle="modal"  >
+            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
               Delete
             </a>
           </span>
@@ -39,19 +40,19 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label>Name</label>
-              <input type="text" class="form-control" required />
+              <label>First Name</label>
+              <input type="text" class="form-control" required  />
             </div>
             <div class="form-group">
               <label>Email</label>
               <input type="email" class="form-control" required />
             </div>
             <div class="form-group">
-              <label>Address {{ data.firstName }}</label>
+              <label>Address</label>
               <textarea class="form-control" required></textarea>
             </div>
             <div class="form-group">
-              <label>{{ data.firstName }}</label>
+              <label>BOB</label>
               <input type="text" class="form-control" required />
             </div>
           </div>
@@ -96,7 +97,11 @@
             data-dismiss="modal"
             value="Cancel"
           />
-          <button @click="deleteData(data)" class="btn btn-danger" data-dismiss="modal">
+          <button
+            @click="deleteData(data)"
+            class="btn btn-danger"
+            data-dismiss="modal"
+          >
             Delete
           </button>
         </div>
@@ -125,9 +130,15 @@ export default {
   methods: {
     deleteData(data) {
       console.log(data);
-    this.$store.dispatch('deleteData', data)
+      this.$store.dispatch("deleteData", data);
     },
+     editData(data){
+    console.log("hellor")
+    this.$store.dispatch("editData", data);
+    console.log(data)
+  }
   },
+ 
 };
 </script>
 

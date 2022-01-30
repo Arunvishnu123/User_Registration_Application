@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 import axios from "axios";
 
+
 export default createStore({
   state: {
     //register form data
@@ -22,7 +23,10 @@ export default createStore({
     currentPassword: "",
 
     //signed in user
-    signedUser:null
+    signedUser: null,
+
+    //currentdata edit
+    editUserData: null
 
   },
   mutations: {
@@ -64,10 +68,18 @@ export default createStore({
     },
 
     //delete the individual data
-    deleteDatas(state,dataID){
-      console.log("dksdv",dataID.id)
-       let datas = state.userData.filter(v=> v.id != dataID.id)
-       state.userData=datas
+    deleteDatas(state, dataID) {
+      console.log("dksdv", dataID.id)
+      let datas = state.userData.filter(v => v.key == dataID.id)
+      
+      state.userData = datas
+
+    },
+
+    editDatas(state, dataID) {
+      console.log("dksdv", dataID)
+       let editdatas = state.userData.filter(v => v.id != dataID.id)
+        state.editUserData = editdatas
     }
 
   },
@@ -83,12 +95,16 @@ export default createStore({
         commit('getData', userdata)
       })
     },
-     deleteData({commit},data){
-             commit('deleteDatas',data);
-             console.log("current",data)
-      axios.delete('https://userregistrationsystem-default-rtdb.firebaseio.com/posts/'+ data.id+'.json').then(response => {
-        console.log("Deleted",response)
+    deleteData({ commit }, data) {
+      commit('deleteDatas', data);
+      console.log("current", data)
+      axios.delete('https://userregistrationsystem-default-rtdb.firebaseio.com/posts/' + data.id + '.json').then(response => {
+        console.log("Deleted", response)
       })
+    },
+    editData({ commit }, data) {
+      commit('editDatas', data);
+      console.log("current", data);
     }
   },
   modules: {},
