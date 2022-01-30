@@ -79,13 +79,17 @@ export default {
 
     },
     methods: {
+
+      //fucntion to logout
         goTosignout() {
             this.$router.push("/");
         },
+
+        //function route to view the registered users
         goTouser() {
             this.$router.push("/Userlist");
         },
-        tet() {
+        test() {
             console.log(this.$store.state.userData)
         }
     },

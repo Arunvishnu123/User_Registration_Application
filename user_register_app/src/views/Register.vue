@@ -40,6 +40,8 @@ export default {
         };
     },
     methods: {
+
+        //function to post data to the api
         onCreatePost() {
             this.$router.push("/register_success");
             axios
@@ -53,7 +55,7 @@ export default {
                         DOB: this.$store.state.DOB,
                         email: this.$store.state.email,
                         password: this.$store.state.password,
-                        value: this.value + 1,
+
                     }
                 )
                 .then((response) => {

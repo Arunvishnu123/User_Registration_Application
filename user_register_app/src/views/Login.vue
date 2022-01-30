@@ -42,9 +42,8 @@
                                         </div>
                                     </form>
                                     <!--
-                    <a class="small text-muted" href="#!">Forgot password?</a>
-                    -->
-
+                                       <a class="small text-muted" href="#!">Forgot password?</a>
+                                     -->
                                     <p class="mb-5 pb-lg-2" style="color: #393f81">
                                         Don't have an account?
                                         <a href="#!" @click="goToRegister()" style="color: #393f81">Register here</a>
@@ -68,7 +67,7 @@ export default {
             value: String,
         };
     },
-
+    //recive entered email and password by the user
     computed: {
         email: {
             get() {
@@ -88,9 +87,13 @@ export default {
         },
     },
     methods: {
+
+      //function for routing to the registration page
         goToRegister() {
             this.$router.push("/Register");
         },
+
+        //function for routing to the userdata page when log in is successful
         goTouser() {
             console.log(this.$store.state.userData[0]);
             for (const element of this.$store.state.userData) {
@@ -100,7 +103,7 @@ export default {
                 }
             }
         },
-        tst() {
+        testfunction() {
             console.log(this.email);
             console.log(this.password);
         },

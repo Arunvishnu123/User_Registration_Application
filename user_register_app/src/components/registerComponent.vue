@@ -32,16 +32,10 @@
     <input v-model="DOB" placeholder="DOB" type="text" id="form3Example9" class="form-control form-control-lg" required />
 </div>
 <!--
-                    <div class="mb-3">
-                      <input
-                        class="form-control"
-                        type="file"
-                        accept="image/*"
-                        id="formFile"
-                        @change="updatePhoto($event.target.name, $event.target.files)"
-                      />
-                    </div>
-                    -->
+<div class="mb-3">
+    <input class="form-control" type="file" accept="image/*" id="formFile" @change="updatePhoto($event.target.name, $event.target.files)" />
+</div>
+-->
 <div class="form-outline mb-4">
     <input v-model="email" placeholder="Email" type="email" id="form3Example90" class="form-control form-control-lg" required />
 </div>

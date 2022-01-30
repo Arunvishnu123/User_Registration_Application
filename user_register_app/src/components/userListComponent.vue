@@ -26,39 +26,8 @@
 <div id="editEmployeeModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form>
-                <div class="modal-header">
-                    <h4 class="modal-title">Edit Employee</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" class="form-control" required :value="this.$store.state.editUserData.firstName" />
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" class="form-control" required :value="this.$store.state.editUserData" />
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" required :value="this.$store.state.editUserData" />
-                    </div>
-                    <div class="form-group">
-                        <label>Address</label>
-                        <textarea class="form-control" required :value="this.$store.state.editUserData"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>DOB</label>
-                        <input type="text" class="form-control" required :value="this.$store.state.editUserData" />
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" />
-                    <input type="submit" class="btn btn-info" value="Save" />
-                </div>
+            <form @submit.prevent="onCreatePut">
+                <editUser />
             </form>
         </div>
     </div>
@@ -91,12 +60,12 @@
 </template>
 
 <script>
-//import editUser from "./editUser.vue";
-
+import editUser from "./editUser.vue";
+import axios from "axios";
 export default {
     name: "usercomp",
     components: {
-        // editUser,
+        editUser,
     },
     props: {
         data: Object,
@@ -126,9 +95,33 @@ export default {
             this.$store.dispatch("deleteData", data);
         },
         editData(data) {
+
             this.$store.state.editUserData = data
-            this.$store.dispatch("editData", data);
-            console.log(data)
+
+            var selectEdit = this.$store.state.userData.filter(v => v.id == data.id)
+            console.log("sdfsdfd", selectEdit[0])
+            this.$store.state.editPutData.firstName = selectEdit[0].firstName
+            this.$store.state.editPutData.lastName = selectEdit[0].lastName
+            this.$store.state.editPutData.DOB = selectEdit[0].DOB
+            this.$store.state.editPutData.email = selectEdit[0].email
+            this.$store.state.editPutData.address = selectEdit[0].address
+            this.$store.state.editPutData.password = selectEdit[0].password
+            this.$store.state.editPutData.gender = selectEdit[0].gender
+
+            console.log(this.$store.state.editPutData)
+            console.log(selectEdit)
+        },
+        onCreatePut() {
+            let da = this.$store.state.editUserData
+            console.log(this.$store.state.editPutData.firstName)
+
+            axios.put('https://userregistrationsystem-default-rtdb.firebaseio.com/posts/' + da.id + '.json',
+                this.$store.state.editPutData).then(response => {
+                console.log("put", response)
+                this.$store.state.userData.filter(v => v.id == this.$store.state.editPutData.id)
+                this.$store.dispatch("getData")
+
+            })
         }
     },
 
@@ -148,10 +141,6 @@ td {
     margin: 0;
     font-size: 0.9em;
     font-family: sans-serif;
-}
-
-td {
-    width: 25%;
 }
 
 .edit {

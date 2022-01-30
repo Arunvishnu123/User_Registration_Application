@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 import axios from "axios";
 
+
 export default createStore({
   state: {
     //register form data
@@ -25,8 +26,25 @@ export default createStore({
     signedUser: null,
 
     //currentdata edit
-    editUserData: null,
+    editUserData:{
+      firstName:null,
+      lastName:null,
+      email:null,
+      DOB:null,
+      address:null,
+      gender:null,
+      pasword:null
+    },
 
+    editPutData:{
+      firstName:null,
+      lastName:null,
+      email:null,
+      DOB:null,
+      address:null,
+      gender:null,
+      pasword:null
+    },
 
     //DELETE
     testDelete:null
@@ -74,7 +92,7 @@ export default createStore({
     deleteDatas(state, dataID) {
       console.log("dksdv", dataID.id)
       let datas = state.userData.filter(v => v.id != dataID.id)
-      
+      console.log("fjdjsdfsdfjsdijfidsfijd",datas)
       state.userData = datas
 
     },
@@ -83,7 +101,28 @@ export default createStore({
       console.log("dksdv", dataID)
       // let editdatas = state.userData.filter(v => v.id != dataID.id)
        // state.editUserData = editdatas
-    }
+    },
+
+    //edit DATA
+
+    editFirstName(state, firstName) {
+      state.editPutData.firstName = firstName
+    },
+    editLastName(state, lastName) {
+      state.editPutData.lastName = lastName
+    },
+    editGender(state, gender) {
+      state.editPutData.gender = gender
+    },
+    editAddress(state, address) {
+      state.editPutData.address = address
+    },
+    editDOB(state, DOB) {
+      state.editPutData.DOB = DOB
+    },
+  editEmail(state, email) {
+      state.editPutData.email = email
+    },
 
   },
   actions: {
@@ -110,5 +149,7 @@ export default createStore({
       console.log("current", data);
     }
   },
-  modules: {},
+  modules: {
+  
+  },
 });
