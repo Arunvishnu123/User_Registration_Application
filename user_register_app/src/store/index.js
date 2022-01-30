@@ -1,7 +1,6 @@
 import { createStore } from "vuex";
 import axios from "axios";
 
-
 export default createStore({
   state: {
     //register form data
@@ -26,7 +25,11 @@ export default createStore({
     signedUser: null,
 
     //currentdata edit
-    editUserData: null
+    editUserData: null,
+
+
+    //DELETE
+    testDelete:null
 
   },
   mutations: {
@@ -70,7 +73,7 @@ export default createStore({
     //delete the individual data
     deleteDatas(state, dataID) {
       console.log("dksdv", dataID.id)
-      let datas = state.userData.filter(v => v.key == dataID.id)
+      let datas = state.userData.filter(v => v.id != dataID.id)
       
       state.userData = datas
 

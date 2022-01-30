@@ -14,7 +14,7 @@
             </a>
           </span>
           <span>
-            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
+            <a @click="getDeleteData(data)" href="#deleteEmployeeModal" class="delete" data-toggle="modal">
               Delete
             </a>
           </span>
@@ -98,7 +98,7 @@
             value="Cancel"
           />
           <button
-            @click="deleteData(data)"
+            @click="deleteData()"
             class="btn btn-danger"
             data-dismiss="modal"
           >
@@ -120,6 +120,12 @@ export default {
   },
   props: {
     data: Object,
+    id:String
+  },
+  data() {
+    return {
+      deleteDataObject:null
+    };
   },
   computed: {
     gt() {
@@ -128,8 +134,15 @@ export default {
     },
   },
   methods: {
-    deleteData(data) {
+    getDeleteData(data){
+
+     this.$store.state.testDelete = data
+     console.log(this.$store.state.testDelete )
+    },
+    deleteData() {
+      let data = this.$store.state.testDelete
       console.log(data);
+    
       this.$store.dispatch("deleteData", data);
     },
      editData(data){
