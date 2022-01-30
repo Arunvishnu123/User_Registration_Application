@@ -1,12 +1,12 @@
-<template >
-    <registersuccess />
+<template>
+<registersuccess />
 </template>
 
 <script>
 import registersuccess from "../components/registerSuccess.vue";
 export default {
-  components: {
-    registersuccess,
-  }
+    components: {
+        registersuccess,
+    }
 }
 </script>

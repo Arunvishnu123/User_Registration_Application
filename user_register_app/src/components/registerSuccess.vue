@@ -1,137 +1,152 @@
 <template>
 <div class="text-center">
-	<!-- Button HTML (to Trigger Modal) -->
-	
+    <!-- Button HTML (to Trigger Modal) -->
+
 </div>
 
 <!-- Modal HTML -->
-<div id="myModal" >
-	<div class="modal-dialog modal-confirm">
-		<div class="modal-content">
-			<div class="modal-header justify-content-center">
-				<div class="icon-box">
-					<i class="material-icons">&#xE876;</i>
-				</div>
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-			</div>
-			<div class="modal-body text-center">
-				<h4>Great!</h4>	
-				<p>Your account has been created successfully.</p>
-				<button @click="gotologin()"   class="btn btn-success" data-dismiss="modal"><span>Go to Login</span> <i class="material-icons">&#xE5C8;</i></button>
-			</div>
-		</div>
-	</div>
-</div> 
+<div id="myModal">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <div class="icon-box">
+                    <i class="material-icons">&#xE876;</i>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <div class="modal-body text-center">
+                <h4>Great!</h4>
+                <p>Your account has been created successfully.</p>
+                <button @click="gotologin()" class="btn btn-success" data-dismiss="modal"><span>Go to Login</span> <i class="material-icons">&#xE5C8;</i></button>
+            </div>
+        </div>
+    </div>
+</div>
 </template>
 
 <script>
 export default {
-  name: "registersuccess",
-  methods:{
-  gotologin(){
-    this.$router.push("/");
-  }
-  }
+    name: "registersuccess",
+    methods: {
+        gotologin() {
+            this.$router.push("/");
+        }
+    }
 };
 </script>
 
-
-<style scoped lang="scss">
+<style lang="scss" scoped>
 body {
-  font-family: "Varela Round", sans-serif;
-  background: #434e65;
-  background-color: #eeb711;
+    font-family: "Varela Round", sans-serif;
+    background: #434e65;
+    background-color: #eeb711;
 }
+
 background {
-  color: #47c9a2;
+    color: #47c9a2;
 }
+
 .modal-confirm {
-  color: #434e65;
-  width: 525px;
+    color: #434e65;
+    width: 525px;
 }
+
 .modal-confirm .modal-content {
-  padding: 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: none;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
 }
+
 .modal-confirm .modal-header {
-  background: #47c9a2;
-  border-bottom: none;
-  position: relative;
-  text-align: center;
-  margin: -20px -20px 0;
-  border-radius: 5px 5px 0 0;
-  padding: 35px;
+    background: #47c9a2;
+    border-bottom: none;
+    position: relative;
+    text-align: center;
+    margin: -20px -20px 0;
+    border-radius: 5px 5px 0 0;
+    padding: 35px;
 }
+
 .modal-confirm h4 {
-  text-align: center;
-  font-size: 36px;
-  margin: 10px 0;
+    text-align: center;
+    font-size: 36px;
+    margin: 10px 0;
 }
+
 .modal-confirm .form-control,
 .modal-confirm .btn {
-  min-height: 40px;
-  border-radius: 3px;
+    min-height: 40px;
+    border-radius: 3px;
 }
+
 .modal-confirm .close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  color: #fff;
-  text-shadow: none;
-  opacity: 0.5;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    text-shadow: none;
+    opacity: 0.5;
 }
+
 .modal-confirm .close:hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
+
 .modal-confirm .icon-box {
-  color: #fff;
-  width: 95px;
-  height: 95px;
-  display: inline-block;
-  border-radius: 50%;
-  z-index: 9;
-  border: 5px solid #fff;
-  padding: 15px;
-  text-align: center;
+    color: #fff;
+    width: 95px;
+    height: 95px;
+    display: inline-block;
+    border-radius: 50%;
+    z-index: 9;
+    border: 5px solid #fff;
+    padding: 15px;
+    text-align: center;
 }
+
 .modal-confirm .icon-box i {
-  font-size: 64px;
-  margin: -4px 0 0 -4px;
+    font-size: 64px;
+    margin: -4px 0 0 -4px;
 }
+
 .modal-confirm.modal-dialog {
-  margin-top: 80px;
+    margin-top: 80px;
 }
+
 .modal-confirm .btn,
 .modal-confirm .btn:active {
-  color: #fff;
-  border-radius: 4px;
-  background: #eeb711 !important;
-  text-decoration: none;
-  transition: all 0.4s;
-  line-height: normal;
-  border-radius: 30px;
-  margin-top: 10px;
-  padding: 6px 20px;
-  border: none;
+    color: #fff;
+    border-radius: 4px;
+    background: #eeb711 !important;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 6px 20px;
+    border: none;
 }
+
 .modal-confirm .btn:hover,
 .modal-confirm .btn:focus {
-  background: #eda645 !important;
-  outline: none;
+    background: #eda645 !important;
+    outline: none;
 }
+
 .modal-confirm .btn span {
-  margin: 1px 3px 0;
-  float: left;
+    margin: 1px 3px 0;
+    float: left;
 }
+
 .modal-confirm .btn i {
-  margin-left: 1px;
-  font-size: 20px;
-  float: right;
+    margin-left: 1px;
+    font-size: 20px;
+    float: right;
 }
+
 .trigger-btn {
-  display: inline-block;
-  margin: 100px auto;
+    display: inline-block;
+    margin: 100px auto;
 }
 </style>

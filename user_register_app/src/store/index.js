@@ -81,8 +81,8 @@ export default createStore({
 
     editDatas(state, dataID) {
       console.log("dksdv", dataID)
-       let editdatas = state.userData.filter(v => v.id != dataID.id)
-        state.editUserData = editdatas
+      // let editdatas = state.userData.filter(v => v.id != dataID.id)
+       // state.editUserData = editdatas
     }
 
   },
