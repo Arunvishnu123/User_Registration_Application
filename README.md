@@ -9,6 +9,6 @@ type "cd user_register_app" in command prompt
 
 Open client - 
 
-npm run dev
+npm run serve
 
 Open http://localhost:8080 in browser
