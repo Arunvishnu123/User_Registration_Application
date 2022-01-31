@@ -6,6 +6,7 @@
             <td>{{ data.email }}</td>
             <td>{{ data.address }}</td>
             <td>{{ data.DOB }}</td>
+            <td>{{ data.gender }}</td>
             <td>
                 <span>
                     <a href="#editEmployeeModal" @click="editData(data)" class="edit" data-toggle="modal">
